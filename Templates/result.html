@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Travel Plan</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Your Travel Itinerary</h1>
+
+<div class="card">
+
+<div style="white-space: pre-wrap;">
+{{ itinerary }}
+</div>
+
+</div>
+
+<a href="/">Generate Another Trip</a>
+
+</div>
+
+</body>
+</html>

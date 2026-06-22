@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Travel Planner</title>
+</head>
+<body>
+
+<h1>AI Travel Itinerary Planner</h1>
+
+<form action="/generate" method="POST">
+
+    <label>Destination:</label>
+    <input type="text" name="destination" required>
+
+    <br><br>
+
+    <label>Days:</label>
+    <input type="number" name="days" required>
+
+    <br><br>
+
+    <label>Budget:</label>
+    <input type="number" name="budget" required>
+
+    <br><br>
+
+    <label>Interests:</label>
+    <input type="text" name="interests" required>
+
+    <br><br>
+
+    <button type="submit">
+        Generate Itinerary
+    </button>
+
+</form>
+
+{% if itinerary %}
+<hr>
+<h2>Your Travel Plan</h2>
+<pre>{{ itinerary }}</pre>
+{% endif %}
+
+</body>
+</html>
