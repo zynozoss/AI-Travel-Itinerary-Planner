@@ -25,17 +25,22 @@ def generate():
     interests = request.form["interests"]
 
     prompt = f"""
-    Create a {days}-day travel itinerary.
+     You are an expert travel planner.
 
-    Destination: {destination}
-    Budget: ₹{budget}
-    Interests: {interests}
+     Create a detailed {days}-day itinerary for {destination}.
 
-    Include:
-    1. Day-wise plan
-    2. Estimated expenses
-    3. Packing suggestions
-    """
+     Budget: ₹{budget}
+     Interests: {interests}
+
+     
+     Formatting Instructions:
+     - Do NOT use * bullets.
+     - Use 📅 for each day heading.
+     - Use 📍 for all itinerary points.
+     - Use 💰 for budget information.
+     - Use 🎒 for packing suggestions.
+     - Make the output visually attractive and easy to read.
+     """
 
     response = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
